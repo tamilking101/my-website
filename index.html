@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RADEM TECHNOLOGIES - Navy & Gold Brochure</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #0a1931;
+            --navy-light: #1a3a5f;
+            --gold: #d4af37;
+            --gold-light: #e6c158;
+            --gold-dark: #b8941f;
+            --light: #f8f9fa;
+            --text: #333;
+            --text-light: #777;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--navy);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .brochure-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 60px rgba(212, 175, 55, 0.3);
+            position: relative;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: 
+                linear-gradient(135deg, rgba(10, 25, 49, 0.95) 0%, rgba(26, 58, 95, 0.9) 100%),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="circuit" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="2" fill="%23d4af37" opacity="0.3"/><circle cx="90" cy="10" r="2" fill="%23d4af37" opacity="0.3"/><circle cx="10" cy="90" r="2" fill="%23d4af37" opacity="0.3"/><circle cx="90" cy="90" r="2" fill="%23d4af37" opacity="0.3"/><line x1="10" y1="10" x2="90" y2="10" stroke="%23d4af37" stroke-width="0.5" opacity="0.2"/><line x1="10" y1="10" x2="10" y2="90" stroke="%23d4af37" stroke-width="0.5" opacity="0.2"/><rect x="48" y="48" width="4" height="4" fill="%23d4af37" opacity="0.4"/></pattern></defs><rect width="1200" height="600" fill="url(%23circuit)"/></svg>');
+            background-size: cover;
+            color: white;
+            padding: 100px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero::before, .hero::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .hero::before {
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+        }
+
+        .hero::after {
+            bottom: -50%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+            animation-direction: reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(50px, 50px) scale(1.1); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+
+        .logo-container {
+            display: inline-block;
+            padding: 40px 60px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 2px solid rgba(212, 175, 55, 0.3);
+            margin-bottom: 30px;
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .logo-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.4);
+        }
+
+        .logo-container:hover::before {
+            opacity: 1;
+        }
+
+        .radem {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 72px;
+            font-weight: 800;
+            letter-spacing: 8px;
+            color: #ffffff;
+            display: block;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+        }
+
+        .tech {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 72px;
+            font-weight: 800;
+            letter-spacing: 8px;
+            color: var(--gold);
+            display: block;
+            text-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+        }
+
+        .subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            margin: 30px 0;
+            font-weight: 400;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-style: italic;
+            color: var(--light);
+        }
+
+        .tagline {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-style: italic;
+            color: var(--gold);
+            margin-top: 30px;
+            padding: 25px 50px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 50px;
+            display: inline-block;
+            border: 2px solid var(--gold);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tagline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .tagline:hover::before {
+            left: 100%;
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 100px 60px;
+            position: relative;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.03;
+            background-image: 
+                linear-gradient(30deg, var(--navy) 12%, transparent 12.5%, transparent 87%, var(--navy) 87.5%),
+                linear-gradient(150deg, var(--navy) 12%, transparent 12.5%, transparent 87%, var(--navy) 87.5%);
+            background-size: 80px 140px;
+            background-position: 0 0, 40px 70px;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 42px;
+            color: var(--navy);
+            margin-bottom: 50px;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--gold) 0%, transparent 100%);
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 5px;
+            background: var(--navy);
+        }
+
+        /* About Section */
+        .about-section {
+            background: 
+                linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 249, 250, 0.95) 100%),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><radialGradient id="grad1"><stop offset="0%25" style="stop-color:%230a1931;stop-opacity:0.05" /><stop offset="100%25" style="stop-color:%230a1931;stop-opacity:0" /></radialGradient></defs><circle cx="100" cy="100" r="300" fill="url(%23grad1)"/><circle cx="1100" cy="700" r="250" fill="url(%23grad1)"/></svg>');
+        }
+
+        .about-content {
+            background: linear-gradient(135deg, rgba(10, 25, 49, 0.03) 0%, rgba(212, 175, 55, 0.05) 100%);
+            padding: 50px;
+            border-radius: 15px;
+            border-left: 6px solid var(--gold);
+            box-shadow: 0 10px 40px rgba(10, 25, 49, 0.1);
+            position: relative;
+            margin-bottom: 50px;
+        }
+
+        .about-text {
+            font-size: 18px;
+            line-height: 1.9;
+            margin-bottom: 20px;
+            color: #444;
+        }
+
+        .about-text:first-of-type:first-letter {
+            font-size: 48px;
+            font-weight: bold;
+            color: var(--gold);
+            float: left;
+            line-height: 1;
+            margin-right: 8px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Vision & Mission */
+        .vision-mission {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .vm-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            border-top: 5px solid var(--gold);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .vm-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gold);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+        }
+
+        .vm-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(212, 175, 55, 0.3);
+        }
+
+        .vm-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .vm-card h3 {
+            color: var(--navy);
+            font-size: 32px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .vm-icon {
+            font-size: 42px;
+            color: var(--gold);
+        }
+
+        .vm-card p {
+            color: #555;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        /* Services Section */
+        .services-section {
+            background: 
+                linear-gradient(135deg, rgba(10, 25, 49, 0.97) 0%, rgba(26, 58, 95, 0.95) 100%),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M 50 0 L 0 0 0 50" fill="none" stroke="%23d4af37" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="1200" height="800" fill="url(%23grid)"/></svg>');
+            color: white;
+        }
+
+        .services-section .section-title {
+            color: white;
+        }
+
+        .services-section .section-title::after {
+            background: linear-gradient(90deg, var(--gold) 0%, transparent 100%);
+        }
+
+        .services-section .section-title::before {
+            background: var(--gold);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 35px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
+            padding: 40px;
+            border-radius: 15px;
+            border: 2px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .service-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 50px rgba(212, 175, 55, 0.3);
+            border-color: var(--gold);
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--gold);
+        }
+
+        .service-card h3 {
+            color: var(--gold);
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .service-card ul {
+            list-style: none;
+            padding-left: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-card li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .service-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        /* Industries Section */
+        .industries-section {
+            background: 
+                linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="hexagons" width="50" height="43.4" patternUnits="userSpaceOnUse" patternTransform="scale(2)"><polygon points="24.8,22 37.3,29.2 37.3,43.7 24.8,50.9 12.3,43.7 12.3,29.2" fill="none" stroke="%230a1931" stroke-width="0.5" opacity="0.05"/></pattern></defs><rect width="1200" height="600" fill="url(%23hexagons)"/></svg>');
+        }
+
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .industry-item {
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+            border-bottom: 4px solid var(--gold);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .industry-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(10, 25, 49, 0.05) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .industry-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 40px rgba(10, 25, 49, 0.15);
+            border-bottom-color: var(--navy);
+        }
+
+        .industry-item:hover::before {
+            opacity: 1;
+        }
+
+        .industry-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+            color: var(--navy);
+            transition: all 0.4s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .industry-item:hover .industry-icon {
+            transform: scale(1.2);
+            color: var(--gold);
+        }
+
+        .industry-item h4 {
+            color: var(--navy);
+            font-size: 18px;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Why Choose Us */
+        .why-choose {
+            background: 
+                linear-gradient(135deg, rgba(26, 58, 95, 0.98) 0%, rgba(10, 25, 49, 0.98) 100%),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><circle cx="100" cy="100" r="150" fill="%23d4af37" opacity="0.05"/><circle cx="1100" cy="500" r="200" fill="%23d4af37" opacity="0.05"/></svg>');
+            color: white;
+        }
+
+        .why-choose .section-title {
+            color: white;
+        }
+
+        .why-choose .section-title::after {
+            background: linear-gradient(90deg, var(--gold) 0%, transparent 100%);
+        }
+
+        .why-choose .section-title::before {
+            background: var(--gold);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: start;
+            gap: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid var(--gold);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .feature-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(10px);
+        }
+
+        .feature-item:hover::before {
+            opacity: 1;
+        }
+
+        .check-icon {
+            color: var(--gold);
+            font-size: 28px;
+            font-weight: bold;
+            margin-top: 5px;
+            min-width: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-text {
+            font-size: 17px;
+            line-height: 1.7;
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-text strong {
+            color: var(--gold);
+            display: block;
+            margin-bottom: 5px;
+            font-size: 19px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: 
+                linear-gradient(135deg, var(--navy) 0%, #071223 100%),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><defs><linearGradient id="grad2" x1="0%25" y1="0%25" x2="100%25" y2="100%25"><stop offset="0%25" style="stop-color:%23d4af37;stop-opacity:0.1" /><stop offset="100%25" style="stop-color:%23d4af37;stop-opacity:0" /></linearGradient></defs><rect width="1200" height="400" fill="url(%23grad2)"/></svg>');
+            color: white;
+            text-align: center;
+            padding: 100px 60px;
+        }
+
+        .contact-section .section-title {
+            color: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .contact-item {
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            border: 2px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-10px);
+            border-color: var(--gold);
+        }
+
+        .contact-item:hover::before {
+            opacity: 1;
+        }
+
+        .contact-icon {
+            font-size: 42px;
+            color: var(--gold);
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-item h4 {
+            color: var(--gold);
+            margin-bottom: 15px;
+            font-size: 20px;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .contact-item p {
+            font-size: 17px;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--navy);
+            color: #888;
+            text-align: center;
+            padding: 40px;
+            font-size: 15px;
+        }
+
+        .footer-brand {
+            color: var(--gold);
+            font-weight: bold;
+            font-size: 18px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .footer p {
+            margin: 10px 0;
+        }
+
+        /* Navy & Gold Accents */
+        .navy-gold-accent {
+            height: 8px;
+            background: linear-gradient(90deg, var(--navy) 0%, var(--gold) 50%, var(--navy) 100%);
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+
+        /* Scroll Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--gold);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--navy);
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 30px;
+                min-height: 80vh;
+            }
+
+            .radem, .tech {
+                font-size: 48px;
+                letter-spacing: 6px;
+            }
+
+            .section {
+                padding: 70px 30px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .vision-mission {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .logo-container {
+                padding: 30px 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <div class="brochure-container">
+        
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="navy-gold-accent"></div>
+            <div class="hero-content">
+                <div class="logo-container">
+                    <span class="radem">RADEM</span>
+                    <span class="tech">TECHNOLOGIES</span>
+                </div>
+                <p class="subtitle">Research and Development in Engineering Mastery</p>
+                <div class="tagline">"Observe the need, deliver the glow"</div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="section about-section">
+            <h2 class="section-title fade-in">About Us</h2>
+            <div class="about-content fade-in">
+                <p class="about-text">
+                    Radem Technologies is a cutting-edge technology company specializing in embedded systems, 
+                    hardware & software development, power electronics, OEM product design, and R&D engineering.
+                </p>
+                <p class="about-text">
+                    At Radem, we believe that true innovation begins with mastery in engineering. With our strong 
+                    foundation in industrial automation, medical devices, IoT systems, and custom product development, 
+                    we deliver end-to-end engineering solutions — from concept and design to mass production.
+                </p>
+                <p class="about-text">
+                    Our vision is to empower industries through research, innovation, and technology mastery, 
+                    creating products that define reliability, performance, and excellence.
+                </p>
+            </div>
+
+            <div class="vision-mission">
+                <div class="vm-card fade-in">
+                    <h3><span class="vm-icon">🎯</span> Our Vision</h3>
+                    <p>
+                        To be a global leader in engineering innovation, offering high-performance embedded and 
+                        electronic solutions that enable smarter, safer, and more efficient systems across industries.
+                    </p>
+                </div>
+                <div class="vm-card fade-in">
+                    <h3><span class="vm-icon">🚀</span> Our Mission</h3>
+                    <p>
+                        To deliver innovative, reliable, and scalable engineering solutions through deep research, 
+                        advanced design, and complete product lifecycle support.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="section services-section">
+            <h2 class="section-title fade-in">Our Core Services</h2>
+            <div class="services-grid">
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon"><i class="fas fa-microchip"></i></div>
+                    <h3>Embedded Systems & Firmware Development</h3>
+                    <ul>
+                        <li>Firmware for STM32, ARM, AVR, ESP, NXP</li>
+                        <li>RTOS, bare-metal, Linux-based embedded software</li>
+                        <li>Modbus, CAN, LIN, RS485, RS232, I2C, SPI</li>
+                        <li>Ethernet, BLE, Wi-Fi, LoRa, GSM, GPS</li>
+                        <li>Sensor and actuator integration</li>
+                        <li>Closed-loop control systems</li>
+                        <li>Bootloader development & field upgrades</li>
+                        <li>System diagnostics</li>
+                        <li>Power optimization & performance tuning</li>
+                    </ul>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon"><i class="fas fa-bolt"></i></div>
+                    <h3>Power Electronics & Control Systems</h3>
+                    <ul>
+                        <li>Power converter design (AC-DC, DC-DC, DC-AC)</li>
+                        <li>Motor drive design (BLDC, PMSM, Stepper, DC motors)</li>
+                        <li>VFD: Single-phase to 3-phase</li>
+                        <li>VFD: 3-phase to 3-phase motor drivers</li>
+                        <li>Power conditioning & protection</li>
+                        <li>Energy-efficient systems</li>
+                        <li>Embedded control firmware</li>
+                        <li>Precise power management</li>
+                        <li>Custom one-to-one product development</li>
+                    </ul>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon"><i class="fas fa-industry"></i></div>
+                    <h3>OEM & One-to-One Product Development</h3>
+                    <ul>
+                        <li>Turnkey design: electronics, firmware, mechanical</li>
+                        <li>One-to-one customized product development</li>
+                        <li>Specific requirement solutions</li>
+                        <li>OEM partnership & contract manufacturing</li>
+                        <li>Confidential design & IP protection</li>
+                        <li>Brand integration</li>
+                        <li>Prototype-to-production transition</li>
+                        <li>Quality assurance</li>
+                    </ul>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon"><i class="fas fa-desktop"></i></div>
+                    <h3>Hardware Design & Prototyping</h3>
+                    <ul>
+                        <li>Schematic capture & PCB layout (up to 8 layers)</li>
+                        <li>Analog, digital, mixed-signal circuit design</li>
+                        <li>High-speed design expertise</li>
+                        <li>High-power design expertise</li>
+                        <li>Prototyping, validation & testing</li>
+                        <li>Field testing</li>
+                        <li>EMI/EMC-compliant design</li>
+                        <li>Safety certification support</li>
+                    </ul>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon"><i class="fas fa-flask"></i></div>
+                    <h3>Research & Product Development (R&D)</h3>
+                    <ul>
+                        <li>Conceptual design & feasibility analysis</li>
+                        <li>Proof-of-concept prototypes</li>
+                        <li>Functional prototypes</li>
+                        <li>Technology evaluation</li>
+                        <li>Design optimization</li>
+                        <li>Industrial & medical device compliance</li>
+                        <li>IoT solutions</li>
+                        <li>Automation-driven solutions</li>
+                    </ul>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>Software, Mobile & Web Applications</h3>
+                    <ul>
+                        <li>Mobile apps for IoT control</li>
+                        <li>Data logging & visualization</li>
+                        <li>Web dashboards for monitoring</li>
+                        <li>Analytics platforms</li>
+                        <li>Cloud & database integration</li>
+                        <li>Connected ecosystems</li>
+                        <li>Cross-platform: Android, iOS, Web</li>
+                        <li>Python, Node.js, React, Flutter frameworks</li>
+                    </ul>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon"><i class="fas fa-cogs"></i></div>
+                    <h3>Mechanical Design & Industrial Engineering</h3>
+                    <ul>
+                        <li>Enclosure & component 3D modelling</li>
+                        <li>SolidWorks, Fusion 360</li>
+                        <li>Structural optimization</li>
+                        <li>Thermal analysis & optimization</li>
+                        <li>Ergonomic analysis</li>
+                        <li>DFMA (Design for Manufacturing & Assembly)</li>
+                        <li>New Product Development (NPD)</li>
+                        <li>Aesthetic & functional integration for end products</li>
+                    </ul>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-icon"><i class="fas fa-heartbeat"></i></div>
+                    <h3>Embedded Medical Components</h3>
+                    <ul>
+                        <li>Medical-grade microcontrollers</li>
+                        <li>Low-power, high-reliability MCUs for patient safety</li>
+                        <li>Analog Front Ends (AFEs)</li>
+                        <li>Biosignal acquisition (ECG, SpO₂, temperature)</li>
+                        <li>Isolation amplifiers & op-amps</li>
+                        <li>Signal integrity & patient isolation</li>
+                        <li>MEMS sensors: pressure, motion, flow sensing</li>
+                        <li>Portable diagnostics</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Industries Section -->
+        <section class="section industries-section">
+            <h2 class="section-title fade-in">Industries We Serve</h2>
+            <div class="industries-grid">
+                <div class="industry-item fade-in">
+                    <div class="industry-icon"><i class="fas fa-industry"></i></div>
+                    <h4>Industrial Automation</h4>
+                </div>
+                <div class="industry-item fade-in">
+                    <div class="industry-icon"><i class="fas fa-bolt"></i></div>
+                    <h4>Power Electronics</h4>
+                </div>
+                <div class="industry-item fade-in">
+                    <div class="industry-icon"><i class="fas fa-hospital"></i></div>
+                    <h4>Medical & Healthcare Devices</h4>
+                </div>
+                <div class="industry-item fade-in">
+                    <div class="industry-icon"><i class="fas fa-tools"></i></div>
+                    <h4>OEM and NPD</h4>
+                </div>
+                <div class="industry-item fade-in">
+                    <div class="industry-icon"><i class="fas fa-network-wired"></i></div>
+                    <h4>IoT & Smart Products</h4>
+                </div>
+                <div class="industry-item fade-in">
+                    <div class="industry-icon"><i class="fas fa-microchip"></i></div>
+                    <h4>Embedded System Solutions</h4>
+                </div>
+                <div class="industry-item fade-in">
+                    <div class="industry-icon"><i class="fas fa-flask"></i></div>
+                    <h4>Research and Development</h4>
+                </div>
+                <div class="industry-item fade-in">
+                    <div class="industry-icon"><i class="fas fa-code"></i></div>
+                    <h4>Web and Android Solutions</h4>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="section why-choose">
+            <h2 class="section-title fade-in">Why Choose RADEM TECHNOLOGIES</h2>
+            <div class="features-grid">
+                <div class="feature-item fade-in">
+                    <div class="check-icon"><i class="fas fa-check"></i></div>
+                    <div class="feature-text">
+                        <strong>Complete Engineering Partner</strong><br>
+                        From concept to commercialization
+                    </div>
+                </div>
+                <div class="feature-item fade-in">
+                    <div class="check-icon"><i class="fas fa-check"></i></div>
+                    <div class="feature-text">
+                        <strong>Strong R&D Foundation</strong><br>
+                        Research-based design for real-world performance
+                    </div>
+                </div>
+                <div class="feature-item fade-in">
+                    <div class="check-icon"><i class="fas fa-check"></i></div>
+                    <div class="feature-text">
+                        <strong>OEM & Custom Product Expertise</strong><br>
+                        Confidential, brand-specific development
+                    </div>
+                </div>
+                <div class="feature-item fade-in">
+                    <div class="check-icon"><i class="fas fa-check"></i></div>
+                    <div class="feature-text">
+                        <strong>Cross-Domain Engineering</strong><br>
+                        Embedded, power, software, and mechanical in one place
+                    </div>
+                </div>
+                <div class="feature-item fade-in">
+                    <div class="check-icon"><i class="fas fa-check"></i></div>
+                    <div class="feature-text">
+                        <strong>Quality & Reliability Focused</strong><br>
+                        Industrial-grade solutions built to last
+                    </div>
+                </div>
+                <div class="feature-item fade-in">
+                    <div class="check-icon"><i class="fas fa-check"></i></div>
+                    <div class="feature-text">
+                        <strong>Innovation Through Mastery</strong><br>
+                        Engineering excellence drives every project
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <h2 class="section-title fade-in">Contact Us</h2>
+            <p style="font-size: 20px; margin-top: 20px; color: var(--gold);">RADEM TECHNOLOGIES</p>
+            <p style="font-size: 16px; margin-bottom: 10px;">Research and Development in Engineering Mastery</p>
+            <div class="contact-grid">
+                <div class="contact-item fade-in">
+                    <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                    <h4>Phone</h4>
+                    <p>+91 9159444025</p>
+                </div>
+                <div class="contact-item fade-in">
+                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                    <h4>Email</h4>
+                    <p>info@rademtech.com</p>
+                </div>
+                <div class="contact-item fade-in">
+                    <div class="contact-icon"><i class="fas fa-globe"></i></div>
+                    <h4>Website</h4>
+                    <p>https://rademtech.com/</p>
+                </div>
+                <div class="contact-item fade-in">
+                    <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <h4>Location</h4>
+                    <p>Chennai, India</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>&copy; 2025 <span class="footer-brand">RADEM TECHNOLOGIES</span>. All rights reserved.</p>
+            <p>Research and Development in Engineering Mastery</p>
+        </div>
+
+    </div>
+
+    <script>
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('active');
+            } else {
+                backToTopButton.classList.remove('active');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Fade-in Animation
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        fadeElements.forEach(element => {
+            fadeInObserver.observe(element);
+        });
+
+        // Add hover effect to service cards
+        const serviceCards = document.querySelectorAll('.service-card');
+        
+        serviceCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-8px)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
